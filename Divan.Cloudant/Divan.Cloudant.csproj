@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\Divan.Cloudant.Query\Divan.Cloudant.Query.csproj" />
+  </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <PackageId>CloudantNetCore</PackageId>
+    <Version>1.1.1</Version>
+    <Authors>Renan Silveira</Authors>
+    <Company>Silveira</Company>
+  </PropertyGroup>
+</Project>
