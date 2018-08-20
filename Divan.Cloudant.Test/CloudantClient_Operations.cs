@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -15,9 +16,9 @@ namespace Divan.Cloudant.Test
         public CloudantClient_Operations()
         {
             _cloudantClient = new CloudantClient(new CloudantConnection(
-                                                    @"https://cloudant.url",
-                                                    "user",
-                                                    "access_token"
+                                                    Environment.GetEnvironmentVariable("CLOUDANT_URL"),
+                                                    Environment.GetEnvironmentVariable("CLOUDANT_USER"),
+                                                    Environment.GetEnvironmentVariable("CLOUDANT_TOKEN")
                                                 ));
         }
 
