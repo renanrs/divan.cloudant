@@ -7,16 +7,18 @@ namespace Divan.Cloudant
         public string rev { get; set; }
     }
 
-    public class RowsResponse{
+    public class RowsResponse<T> where T : class{
         public string id { get; set; }
         public string key { get; set; }
         public RowValue value { get; set; }
+        public T doc { get; set; }
     }
 
-    public class AllDocumentsResponse
+    public class AllDocsViewResponse<T> where T : class
     {
         public int total_rows { get; set; } 
         public int offset { get; set; }
-        public List<RowsResponse> rows { get; set; }
+        public List<RowsResponse<T>> rows { get; set; }
+        
     }
 }

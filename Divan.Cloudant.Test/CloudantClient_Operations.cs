@@ -157,6 +157,33 @@ namespace Divan.Cloudant.Test
         }
 
         [TestMethod]
+        public void A6_GetAllDocsIncludeDocks(){
+
+            try
+            {
+                var result = Task.Run(() => _cloudantClient.GetDatabaseAsync(value)).GetAwaiter();
+                var db = result.GetResult();
+
+                var allDocsReturn = Task.Run(() => db.GetAllDocs("")).GetAwaiter();
+                var obj = allDocsReturn.GetResult();
+                var AllRequest=obj.IncludeDocs(true).Build();
+                var json = AllRequest.GetResponse();
+                var docs = json.GetDocsAs<CepModel>();
+                Assert.IsTrue(docs != null,"Something wrong happend here, GetAllDocs operation");
+                Assert.IsTrue(docs.Count > 0,"There is no data got by the method");
+                Assert.IsInstanceOfType(docs,typeof(List<CepModel>),"Json was converted to wrong type");
+            }
+            catch (System.Exception e)
+            {
+                
+                 Assert.Fail($"All docs weren't retrieved,an Exception has been thrown",e);
+            }
+        }
+
+        
+
+
+        [TestMethod]
         public void A6_UpdateDoc()
         {
             var result = Task.Run(() => _cloudantClient.GetDatabaseAsync(value)).GetAwaiter();

@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Divan.Cloudant.Exceptions;
+using Divan.Cloudant;
 
 namespace Divan.Cloudant
 {
@@ -201,6 +202,11 @@ namespace Divan.Cloudant
             var jsonResult = result.Content.ReadAsStringAsync();
 
             return jsonResult.Result;
+        }
+
+        public async Task<RequestBuilder> GetAllDocs(string test)
+        {            
+            return new RequestBuilder(DatabaseName,_client);
         }
 
         
