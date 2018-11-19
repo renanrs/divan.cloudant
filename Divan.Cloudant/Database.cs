@@ -204,9 +204,9 @@ namespace Divan.Cloudant
             return jsonResult.Result;
         }
 
-        public async Task<RequestBuilder> GetAllDocs(string test)
+        public RequestBuilder GetAllDocs(string test)
         {            
-            return new RequestBuilder(DatabaseName,_client);
+            return  new RequestBuilder(DatabaseName,_client);
         }
 
         
