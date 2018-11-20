@@ -42,7 +42,7 @@ var task = await cloudantClient.CreateDbAsync("myDatabase");
 ```c#
 var database = await cloudantClient.GetDatabaseAsync("myDatabase");
 ```
-## Creating Documents
+### Creating Documents
 
 Divan.Cloudant serializes your model to json internally and send to Cloudant.
 By default Cloundant's documents has two required properties, _id and _rev, their values is generated automatically. Divan.Cloudant requires those properties in your models to be serialized to Json format and vice versa.
