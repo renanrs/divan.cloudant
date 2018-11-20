@@ -1,7 +1,7 @@
 # divan.cloudant
 [![Build status](https://ci.appveyor.com/api/projects/status/b6w3aafn14l8m5ut/branch/master?svg=true)](https://ci.appveyor.com/project/renanrs/divan-cloudant-scv9l/branch/master)
 
-Framework to simplify the use of Cloudant Database. It provides frinedly interface to comunicate to Cloudant's API.
+Framework to simplify the use of Cloudant Database. It provides a friendly interface to communicate to Cloudant's API.
 
 ## Getting Started
 
@@ -25,20 +25,20 @@ PM> Install-Package Divan.Cloudant
 ```
 
 ## Code Sample
-The first step to use Divan.Cloudant, you need to create an instance of 'CloudantClient', this class makes possible database handling, such as Create, Get and Delete.
+The first step to use Divan.Cloudant, you need to create an instance of `CloudantClient`, this class makes possible database handling, such as Create, Get and Delete.
 
 ```c#
 var cloudantClient = new CloudantClient(new CloudantConnection("CLOUDANT_URL","CLOUDANT_USER","CLOUDANT_PWD"));
 ```
 
 ### Creating Database
-Cloudant API allows for easy development creation of databases. Inside the 'CloudantClient', exists the method 'CreateDbAsync' or 'GetDbAsync' to get the work done.
+Cloudant API allows for easy development creation of databases. Inside the `CloudantClient`, exists the method `CreateDbAsync` or `GetDbAsync` to get the work done.
 
-'CreateDbAsync' only creates the database in cloudant.
+`CreateDbAsync` only creates the database in Cloudant.
 ```c#
 var task = await cloudantClient.CreateDbAsync("myDatabase");
 ```
-'GetDbAsync' different of 'CreateDbAsync', if there's no database of the same name it creates a new one and returns an instance of 'Database'.
+`GetDbAsync` different of `CreateDbAsync`, if there's no database of the same name it creates a new one and returns an instance of 'Database'.
 ```c#
 var database = await cloudantClient.GetDatabaseAsync("myDatabase");
 ```
@@ -59,7 +59,7 @@ public class ZipCodeModel    {
 }
 ```
 
-'CreateDocAsync'
+`CreateDocAsync`
 
 ```c#
 var db = await cloudantClient.GetDatabaseAsync("myDatabase");
