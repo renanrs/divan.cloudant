@@ -56,7 +56,7 @@ namespace Divan.Cloudant
         }
 
         /// <summary>
-        /// This method create or updates a bulk of documents.
+        /// Method creates or updates a bulk of documents.
         /// </summary>
         /// <typeparam name="ResultObject">Result from database</typeparam>
         public async Task<IEnumerable<ResultObject>> BulkOfDocsAsync<T>(IEnumerable<T> doc) where T : class

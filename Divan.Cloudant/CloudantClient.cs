@@ -84,7 +84,7 @@ namespace Divan.Cloudant
         // }
 
         /// <summary>
-        /// Method retrieves an specific database instance by database name or create one
+        /// Method retrieves a specific database instance by database name or create one
         /// </summary>
         /// <param name="databaseName">Database Name</param>
         /// <param name="create">Informing to create the database in case it does not exist</param>
@@ -102,7 +102,5 @@ namespace Divan.Cloudant
 
             return new Database(databaseName, _client);
         }
-
-        
     }
 }
