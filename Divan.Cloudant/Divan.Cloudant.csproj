@@ -3,9 +3,9 @@
     <ProjectReference Include="..\Divan.Cloudant.Query\Divan.Cloudant.Query.csproj" />
   </ItemGroup>
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Divan.Cloudant</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Renan Silveira</Authors>
     <Company>Silveira</Company>
   </PropertyGroup>
